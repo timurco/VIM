@@ -33,7 +33,13 @@ Step 4: Install dependencies
 pip install -r requirements.txt
 ```
 
-## Data Preparation
+Step 5: Downloads models via `preparation` script
+
+```bash
+python preparation.py
+```
+
+Or manually:
 * [VIM50](https://drive.google.com/drive/folders/1gYtZd66qeCA4JWdbguRaWecG90aqfvs5?usp=sharing)
 * [MTRCNN masks](https://drive.google.com/drive/folders/1gYtZd66qeCA4JWdbguRaWecG90aqfvs5?usp=sharing)
 * [SeqFormer masks](https://drive.google.com/drive/folders/1gYtZd66qeCA4JWdbguRaWecG90aqfvs5?usp=sharing)

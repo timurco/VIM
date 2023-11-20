@@ -14,6 +14,7 @@ import random
 import utils
 from   utils import CONFIG
 import networks
+import sys
 
 random.seed(42)
 
@@ -162,8 +163,14 @@ if __name__ == '__main__':
         tg_masks = []
         re_masks = []
         image_names = []
-        tg_mask_path = os.path.join(args.tg_mask_dir, single_clip_path.split('/')[-1])
-        re_mask_path = os.path.join(args.re_mask_dir, single_clip_path.split('/')[-1])
+
+        SL = "/"
+        if sys.platform.startswith('win32'):
+            SL = "\\"
+
+        tg_mask_path = os.path.join(args.tg_mask_dir, single_clip_path.split(SL)[-1])
+        re_mask_path = os.path.join(args.re_mask_dir, single_clip_path.split(SL)[-1])
+
         for ins_mask in sorted(os.listdir(tg_mask_path)):
             ins_mask_path_ouput = os.path.join(single_output_path, ins_mask)
             os.makedirs(ins_mask_path_ouput, exist_ok=True)
